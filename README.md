@@ -68,18 +68,19 @@ Release assets match `install.release_asset` in `index.json`, e.g. `hand-browser
 
 ## Manual install (today, before market wiring)
 
-**Skill (git):**
+**Skill (git clone entire repo, then copy subdir):**
 
 ```bash
-openfang skill install https://github.com/uni-tools/packs.git#skill/hello-world
-# or clone and point at skill/hello-world
+git clone --depth 1 https://github.com/uni-tools/packs.git /tmp/uni-tools-packs
+openfang skill install /tmp/uni-tools-packs/skill/hello-world
 ```
 
-**Hand / UTCP (copy):**
+**Any pack (release zip):**
 
 ```bash
-cp -r hand/browser ~/.openfang/hands/browser
-cp utcp/echo/provider.json ~/.openfang/utcp/providers.d/echo.json
+curl -L -o /tmp/pack.zip \
+  https://github.com/uni-tools/packs/releases/download/v1.0.0/hand-browser-1.0.0.zip
+unzip -d ~/.openfang/hands/browser /tmp/pack.zip
 ```
 
 ## Adding a pack
