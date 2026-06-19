@@ -1,14 +1,14 @@
 id = "aws"
 name = "AWS"
-description = "Manage Amazon Web Services resources including S3, EC2, Lambda, and more through the MCP server"
+description = "Manage AWS resources via the official AWS API MCP server (AWS CLI commands through MCP)"
 category = "cloud"
 icon = "☁️"
 tags = ["cloud", "amazon", "infrastructure", "s3", "ec2", "lambda", "devops"]
 
 [transport]
 type = "stdio"
-command = "npx"
-args = ["-y", "@aws-mcp/server-aws"]
+command = "uvx"
+args = ["awslabs.aws-api-mcp-server@latest"]
 
 [[required_env]]
 name = "AWS_ACCESS_KEY_ID"
@@ -36,7 +36,8 @@ interval_secs = 60
 unhealthy_threshold = 3
 
 setup_instructions = """
-1. Go to the AWS IAM Console (https://console.aws.amazon.com/iam/) and create or select an IAM user with programmatic access.
-2. Generate an access key pair and note down the Access Key ID and Secret Access Key.
-3. Paste both credentials and your preferred AWS region (default: us-east-1) into the fields above.
+1. Install uv (https://docs.astral.sh/uv/getting-started/installation/) — required to run `uvx awslabs.aws-api-mcp-server`.
+2. Create or select an IAM user with programmatic access in the AWS IAM Console.
+3. Generate an access key pair and set AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_REGION.
+4. Optionally set AWS_API_MCP_PROFILE_NAME to use a named profile from ~/.aws/credentials.
 """

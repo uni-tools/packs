@@ -74,6 +74,7 @@ Local build:
 
 ```bash
 bash scripts/validate-index.sh
+bash scripts/validate-extension-npm.sh
 bash scripts/build-release.sh 1.0.0
 ls dist/
 ```

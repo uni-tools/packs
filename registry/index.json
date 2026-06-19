@@ -5,7 +5,7 @@
     "updated_at": "2026-06-19",
     "base_repo": "uni-tools/packs",
     "catalog_url": "https://raw.githubusercontent.com/uni-tools/packs/main/registry/index.json",
-    "latest_release": "v1.2.0"
+    "latest_release": "v1.3.0"
   },
   "items": [
     {
@@ -51,8 +51,8 @@
       "id": "aws",
       "kind": "extension",
       "name": "AWS",
-      "version": "1.1.0",
-      "description": "Manage Amazon Web Services resources including S3, EC2, Lambda, and more through the MCP server",
+      "version": "1.1.1",
+      "description": "Manage AWS resources via the official AWS API MCP server (AWS CLI through MCP)",
       "tags": [
         "openfang",
         "extension",
@@ -61,8 +61,8 @@
       "install": {
         "method": "github_release",
         "repo_path": "extension/aws",
-        "release_asset": "extension-aws-1.1.0.zip",
-        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-aws-1.1.0.zip"
+        "release_asset": "extension-aws-1.1.1.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.3.0/extension-aws-1.1.1.zip"
       }
     },
     {
@@ -447,7 +447,7 @@
       "id": "sqlite-mcp",
       "kind": "extension",
       "name": "SQLite",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "Query and manage local SQLite databases through the MCP server",
       "tags": [
         "openfang",
@@ -457,8 +457,8 @@
       "install": {
         "method": "github_release",
         "repo_path": "extension/sqlite-mcp",
-        "release_asset": "extension-sqlite-mcp-1.1.0.zip",
-        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-sqlite-mcp-1.1.0.zip"
+        "release_asset": "extension-sqlite-mcp-1.1.1.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.3.0/extension-sqlite-mcp-1.1.1.zip"
       }
     },
     {
