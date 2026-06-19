@@ -27,14 +27,24 @@ packs/
 └── utcp/<id>/              # provider.json
 ```
 
-## Bundled packs (v1.0.0)
+## Bundled packs (v1.1.0)
 
-| Kind | ID | Install target on disk |
-|------|-----|------------------------|
-| skill | `hello-world` | `~/.openfang/skills/hello-world/` |
-| hand | `browser` | `~/.openfang/hands/browser/` |
-| extension | `github` | `~/.openfang/integrations.toml` + MCP |
-| utcp-provider | `echo` | `~/.openfang/utcp/providers.d/echo.json` |
+| Kind | Count | Install target on disk |
+|------|-------|------------------------|
+| skill | 61 | `~/.openfang/skills/<id>/` |
+| hand | 9 | `~/.openfang/hands/<id>/` |
+| extension | 25 | `~/.openfang/integrations.toml` + MCP |
+| utcp-provider | 1 | `~/.openfang/utcp/providers.d/<id>.json` |
+
+**Total: 96 packs** exported from OpenFang bundled assets.
+
+Refresh from OpenFang source tree:
+
+```bash
+python3 scripts/sync-from-openfang.py
+bash scripts/validate-index.sh
+bash scripts/build-release.sh 1.1.0
+```
 
 ## Install flow (target)
 

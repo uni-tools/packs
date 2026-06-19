@@ -5,63 +5,1664 @@
     "updated_at": "2026-06-19",
     "base_repo": "uni-tools/packs",
     "catalog_url": "https://raw.githubusercontent.com/uni-tools/packs/main/registry/index.json",
-    "latest_release": "v1.0.0"
+    "latest_release": "v1.1.0"
   },
   "items": [
     {
-      "id": "hello-world",
-      "kind": "skill",
-      "name": "Hello World",
-      "version": "1.0.0",
-      "description": "Minimal demo skill to verify uni-tools pack install from GitHub.",
-      "tags": ["demo", "general", "uni-tools"],
+      "id": "aws",
+      "kind": "extension",
+      "name": "AWS",
+      "version": "1.1.0",
+      "description": "Manage Amazon Web Services resources including S3, EC2, Lambda, and more through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
       "install": {
         "method": "github_release",
-        "repo_path": "skill/hello-world",
-        "release_asset": "skill-hello-world-1.0.0.zip",
-        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.0.0/skill-hello-world-1.0.0.zip"
+        "repo_path": "extension/aws",
+        "release_asset": "extension-aws-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-aws-1.1.0.zip"
       }
     },
     {
-      "id": "browser",
-      "kind": "hand",
-      "name": "Browser Hand",
-      "version": "1.0.0",
-      "description": "Autonomous web browser — navigates sites, fills forms, and completes multi-step web tasks.",
-      "tags": ["browser", "automation", "productivity"],
+      "id": "azure-mcp",
+      "kind": "extension",
+      "name": "Microsoft Azure",
+      "version": "1.1.0",
+      "description": "Manage Azure resources including VMs, Storage, and App Services through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
       "install": {
         "method": "github_release",
-        "repo_path": "hand/browser",
-        "release_asset": "hand-browser-1.0.0.zip",
-        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.0.0/hand-browser-1.0.0.zip"
+        "repo_path": "extension/azure-mcp",
+        "release_asset": "extension-azure-mcp-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-azure-mcp-1.1.0.zip"
+      }
+    },
+    {
+      "id": "bitbucket",
+      "kind": "extension",
+      "name": "Bitbucket",
+      "version": "1.1.0",
+      "description": "Access Bitbucket repositories, pull requests, and pipelines through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/bitbucket",
+        "release_asset": "extension-bitbucket-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-bitbucket-1.1.0.zip"
+      }
+    },
+    {
+      "id": "brave-search",
+      "kind": "extension",
+      "name": "Brave Search",
+      "version": "1.1.0",
+      "description": "Perform web searches using the Brave Search API through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/brave-search",
+        "release_asset": "extension-brave-search-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-brave-search-1.1.0.zip"
+      }
+    },
+    {
+      "id": "discord-mcp",
+      "kind": "extension",
+      "name": "Discord",
+      "version": "1.1.0",
+      "description": "Access Discord servers, channels, and messages through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/discord-mcp",
+        "release_asset": "extension-discord-mcp-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-discord-mcp-1.1.0.zip"
+      }
+    },
+    {
+      "id": "dropbox",
+      "kind": "extension",
+      "name": "Dropbox",
+      "version": "1.1.0",
+      "description": "Access and manage Dropbox files and folders through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/dropbox",
+        "release_asset": "extension-dropbox-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-dropbox-1.1.0.zip"
+      }
+    },
+    {
+      "id": "elasticsearch",
+      "kind": "extension",
+      "name": "Elasticsearch",
+      "version": "1.1.0",
+      "description": "Search and manage Elasticsearch indices and documents through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/elasticsearch",
+        "release_asset": "extension-elasticsearch-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-elasticsearch-1.1.0.zip"
+      }
+    },
+    {
+      "id": "exa-search",
+      "kind": "extension",
+      "name": "Exa Search",
+      "version": "1.1.0",
+      "description": "Perform AI-powered neural searches and retrieve web content through the Exa MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/exa-search",
+        "release_asset": "extension-exa-search-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-exa-search-1.1.0.zip"
+      }
+    },
+    {
+      "id": "gcp-mcp",
+      "kind": "extension",
+      "name": "Google Cloud Platform",
+      "version": "1.1.0",
+      "description": "Manage GCP resources including Compute Engine, Cloud Storage, and BigQuery through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/gcp-mcp",
+        "release_asset": "extension-gcp-mcp-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-gcp-mcp-1.1.0.zip"
       }
     },
     {
       "id": "github",
       "kind": "extension",
       "name": "GitHub",
-      "version": "1.0.0",
-      "description": "GitHub repositories, issues, and PRs via the official MCP server.",
-      "tags": ["devtools", "git", "mcp"],
+      "version": "1.1.0",
+      "description": "Access GitHub repositories, issues, pull requests, and organizations through the official MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
       "install": {
         "method": "github_release",
         "repo_path": "extension/github",
-        "release_asset": "extension-github-1.0.0.zip",
-        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.0.0/extension-github-1.0.0.zip"
+        "release_asset": "extension-github-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-github-1.1.0.zip"
+      }
+    },
+    {
+      "id": "gitlab",
+      "kind": "extension",
+      "name": "GitLab",
+      "version": "1.1.0",
+      "description": "Access GitLab projects, merge requests, issues, and CI/CD pipelines through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/gitlab",
+        "release_asset": "extension-gitlab-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-gitlab-1.1.0.zip"
+      }
+    },
+    {
+      "id": "gmail",
+      "kind": "extension",
+      "name": "Gmail",
+      "version": "1.1.0",
+      "description": "Read, send, and manage Gmail messages and drafts through the Anthropic MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/gmail",
+        "release_asset": "extension-gmail-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-gmail-1.1.0.zip"
+      }
+    },
+    {
+      "id": "google-calendar",
+      "kind": "extension",
+      "name": "Google Calendar",
+      "version": "1.1.0",
+      "description": "Manage Google Calendar events, schedules, and availability through the Anthropic MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/google-calendar",
+        "release_asset": "extension-google-calendar-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-google-calendar-1.1.0.zip"
+      }
+    },
+    {
+      "id": "google-drive",
+      "kind": "extension",
+      "name": "Google Drive",
+      "version": "1.1.0",
+      "description": "Browse, search, and read files from Google Drive through the Anthropic MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/google-drive",
+        "release_asset": "extension-google-drive-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-google-drive-1.1.0.zip"
+      }
+    },
+    {
+      "id": "jira",
+      "kind": "extension",
+      "name": "Jira",
+      "version": "1.1.0",
+      "description": "Access Jira issues, projects, boards, and sprints through the Atlassian MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/jira",
+        "release_asset": "extension-jira-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-jira-1.1.0.zip"
+      }
+    },
+    {
+      "id": "linear",
+      "kind": "extension",
+      "name": "Linear",
+      "version": "1.1.0",
+      "description": "Manage Linear issues, projects, cycles, and teams through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/linear",
+        "release_asset": "extension-linear-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-linear-1.1.0.zip"
+      }
+    },
+    {
+      "id": "mongodb",
+      "kind": "extension",
+      "name": "MongoDB",
+      "version": "1.1.0",
+      "description": "Query and manage MongoDB databases and collections through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/mongodb",
+        "release_asset": "extension-mongodb-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-mongodb-1.1.0.zip"
+      }
+    },
+    {
+      "id": "notion",
+      "kind": "extension",
+      "name": "Notion",
+      "version": "1.1.0",
+      "description": "Access and manage Notion pages, databases, and blocks through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/notion",
+        "release_asset": "extension-notion-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-notion-1.1.0.zip"
+      }
+    },
+    {
+      "id": "postgresql",
+      "kind": "extension",
+      "name": "PostgreSQL",
+      "version": "1.1.0",
+      "description": "Query and manage PostgreSQL databases through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/postgresql",
+        "release_asset": "extension-postgresql-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-postgresql-1.1.0.zip"
+      }
+    },
+    {
+      "id": "redis",
+      "kind": "extension",
+      "name": "Redis",
+      "version": "1.1.0",
+      "description": "Access and manage Redis key-value stores through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/redis",
+        "release_asset": "extension-redis-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-redis-1.1.0.zip"
+      }
+    },
+    {
+      "id": "sentry",
+      "kind": "extension",
+      "name": "Sentry",
+      "version": "1.1.0",
+      "description": "Monitor and manage Sentry error tracking, issues, and releases through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/sentry",
+        "release_asset": "extension-sentry-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-sentry-1.1.0.zip"
+      }
+    },
+    {
+      "id": "slack",
+      "kind": "extension",
+      "name": "Slack",
+      "version": "1.1.0",
+      "description": "Access Slack channels, messages, and users through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/slack",
+        "release_asset": "extension-slack-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-slack-1.1.0.zip"
+      }
+    },
+    {
+      "id": "sqlite-mcp",
+      "kind": "extension",
+      "name": "SQLite",
+      "version": "1.1.0",
+      "description": "Query and manage local SQLite databases through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/sqlite-mcp",
+        "release_asset": "extension-sqlite-mcp-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-sqlite-mcp-1.1.0.zip"
+      }
+    },
+    {
+      "id": "teams-mcp",
+      "kind": "extension",
+      "name": "Microsoft Teams",
+      "version": "1.1.0",
+      "description": "Access Microsoft Teams channels, chats, and messages through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/teams-mcp",
+        "release_asset": "extension-teams-mcp-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-teams-mcp-1.1.0.zip"
+      }
+    },
+    {
+      "id": "todoist",
+      "kind": "extension",
+      "name": "Todoist",
+      "version": "1.1.0",
+      "description": "Manage Todoist tasks, projects, and labels through the MCP server",
+      "tags": [
+        "openfang",
+        "extension",
+        "mcp"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/todoist",
+        "release_asset": "extension-todoist-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/extension-todoist-1.1.0.zip"
+      }
+    },
+    {
+      "id": "browser",
+      "kind": "hand",
+      "name": "Browser Hand",
+      "version": "1.1.0",
+      "description": "Autonomous web browser — navigates sites, fills forms, clicks buttons, and completes multi-step web tasks with user approval for purchases",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/browser",
+        "release_asset": "hand-browser-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-browser-1.1.0.zip"
+      }
+    },
+    {
+      "id": "clip",
+      "kind": "hand",
+      "name": "Clip Hand",
+      "version": "1.1.0",
+      "description": "Turns long-form video into viral short clips with captions and thumbnails",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/clip",
+        "release_asset": "hand-clip-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-clip-1.1.0.zip"
+      }
+    },
+    {
+      "id": "collector",
+      "kind": "hand",
+      "name": "Collector Hand",
+      "version": "1.1.0",
+      "description": "Autonomous intelligence collector — monitors any target continuously with change detection and knowledge graphs",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/collector",
+        "release_asset": "hand-collector-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-collector-1.1.0.zip"
+      }
+    },
+    {
+      "id": "infisical-sync",
+      "kind": "hand",
+      "name": "Infisical Sync Hand",
+      "version": "1.1.0",
+      "description": "Autonomous secrets synchronisation between a self-hosted Infisical instance and the agent's local credential vault. Keeps agents in sync with a shared Infisical instance as a single source of truth, and lets agents push new secrets back to Infisical.",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/infisical-sync",
+        "release_asset": "hand-infisical-sync-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-infisical-sync-1.1.0.zip"
+      }
+    },
+    {
+      "id": "lead",
+      "kind": "hand",
+      "name": "Lead Hand",
+      "version": "1.1.0",
+      "description": "Autonomous lead generation — discovers, enriches, and delivers qualified leads on a schedule",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/lead",
+        "release_asset": "hand-lead-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-lead-1.1.0.zip"
+      }
+    },
+    {
+      "id": "predictor",
+      "kind": "hand",
+      "name": "Predictor Hand",
+      "version": "1.1.0",
+      "description": "Autonomous future predictor — collects signals, builds reasoning chains, makes calibrated predictions, and tracks accuracy",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/predictor",
+        "release_asset": "hand-predictor-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-predictor-1.1.0.zip"
+      }
+    },
+    {
+      "id": "researcher",
+      "kind": "hand",
+      "name": "Researcher Hand",
+      "version": "1.1.0",
+      "description": "Autonomous deep researcher — exhaustive investigation, cross-referencing, fact-checking, and structured reports",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/researcher",
+        "release_asset": "hand-researcher-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-researcher-1.1.0.zip"
+      }
+    },
+    {
+      "id": "trader",
+      "kind": "hand",
+      "name": "Trading Hand",
+      "version": "1.1.0",
+      "description": "Autonomous market intelligence and trading engine — multi-signal analysis, adversarial bull/bear reasoning, calibrated confidence scoring, strict risk management, and portfolio-level analytics",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/trader",
+        "release_asset": "hand-trader-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-trader-1.1.0.zip"
+      }
+    },
+    {
+      "id": "twitter",
+      "kind": "hand",
+      "name": "Twitter Hand",
+      "version": "1.1.0",
+      "description": "Autonomous Twitter/X manager — content creation, scheduled posting, engagement, and performance tracking",
+      "tags": [
+        "openfang",
+        "hand"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/twitter",
+        "release_asset": "hand-twitter-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/hand-twitter-1.1.0.zip"
+      }
+    },
+    {
+      "id": "ansible",
+      "kind": "skill",
+      "name": "Ansible",
+      "version": "1.1.0",
+      "description": "Ansible automation expert for playbooks, roles, inventories, and infrastructure management",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/ansible",
+        "release_asset": "skill-ansible-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-ansible-1.1.0.zip"
+      }
+    },
+    {
+      "id": "api-tester",
+      "kind": "skill",
+      "name": "Api Tester",
+      "version": "1.1.0",
+      "description": "API testing expert for curl, REST, GraphQL, authentication, and debugging",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/api-tester",
+        "release_asset": "skill-api-tester-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-api-tester-1.1.0.zip"
+      }
+    },
+    {
+      "id": "aws",
+      "kind": "skill",
+      "name": "Aws",
+      "version": "1.1.0",
+      "description": "AWS cloud services expert for EC2, S3, Lambda, IAM, and AWS CLI",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/aws",
+        "release_asset": "skill-aws-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-aws-1.1.0.zip"
+      }
+    },
+    {
+      "id": "azure",
+      "kind": "skill",
+      "name": "Azure",
+      "version": "1.1.0",
+      "description": "Microsoft Azure expert for az CLI, AKS, App Service, and cloud infrastructure",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/azure",
+        "release_asset": "skill-azure-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-azure-1.1.0.zip"
+      }
+    },
+    {
+      "id": "ci-cd",
+      "kind": "skill",
+      "name": "Ci Cd",
+      "version": "1.1.0",
+      "description": "CI/CD pipeline expert for GitHub Actions, GitLab CI, Jenkins, and deployment automation",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/ci-cd",
+        "release_asset": "skill-ci-cd-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-ci-cd-1.1.0.zip"
+      }
+    },
+    {
+      "id": "code-reviewer",
+      "kind": "skill",
+      "name": "Code Reviewer",
+      "version": "1.1.0",
+      "description": "Code review specialist focused on patterns, bugs, security, and performance",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/code-reviewer",
+        "release_asset": "skill-code-reviewer-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-code-reviewer-1.1.0.zip"
+      }
+    },
+    {
+      "id": "compliance",
+      "kind": "skill",
+      "name": "Compliance",
+      "version": "1.1.0",
+      "description": "Compliance expert for SOC 2, GDPR, HIPAA, PCI-DSS, and security frameworks",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/compliance",
+        "release_asset": "skill-compliance-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-compliance-1.1.0.zip"
+      }
+    },
+    {
+      "id": "confluence",
+      "kind": "skill",
+      "name": "Confluence",
+      "version": "1.1.0",
+      "description": "Confluence wiki expert for page structure, spaces, macros, and content organization",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/confluence",
+        "release_asset": "skill-confluence-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-confluence-1.1.0.zip"
+      }
+    },
+    {
+      "id": "crypto-expert",
+      "kind": "skill",
+      "name": "Crypto Expert",
+      "version": "1.1.0",
+      "description": "Cryptography expert for TLS, symmetric/asymmetric encryption, hashing, and key management",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/crypto-expert",
+        "release_asset": "skill-crypto-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-crypto-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "css-expert",
+      "kind": "skill",
+      "name": "Css Expert",
+      "version": "1.1.0",
+      "description": "CSS expert for flexbox, grid, animations, responsive design, and modern layout techniques",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/css-expert",
+        "release_asset": "skill-css-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-css-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "data-analyst",
+      "kind": "skill",
+      "name": "Data Analyst",
+      "version": "1.1.0",
+      "description": "Data analysis expert for statistics, visualization, pandas, and exploration",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/data-analyst",
+        "release_asset": "skill-data-analyst-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-data-analyst-1.1.0.zip"
+      }
+    },
+    {
+      "id": "data-pipeline",
+      "kind": "skill",
+      "name": "Data Pipeline",
+      "version": "1.1.0",
+      "description": "Data pipeline expert for ETL, Apache Spark, Airflow, dbt, and data quality",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/data-pipeline",
+        "release_asset": "skill-data-pipeline-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-data-pipeline-1.1.0.zip"
+      }
+    },
+    {
+      "id": "docker",
+      "kind": "skill",
+      "name": "Docker",
+      "version": "1.1.0",
+      "description": "Docker expert for containers, Compose, Dockerfiles, and debugging",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/docker",
+        "release_asset": "skill-docker-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-docker-1.1.0.zip"
+      }
+    },
+    {
+      "id": "elasticsearch",
+      "kind": "skill",
+      "name": "Elasticsearch",
+      "version": "1.1.0",
+      "description": "Elasticsearch expert for queries, mappings, aggregations, index management, and cluster operations",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/elasticsearch",
+        "release_asset": "skill-elasticsearch-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-elasticsearch-1.1.0.zip"
+      }
+    },
+    {
+      "id": "email-writer",
+      "kind": "skill",
+      "name": "Email Writer",
+      "version": "1.1.0",
+      "description": "Professional email writing expert for tone, structure, clarity, and business communication",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/email-writer",
+        "release_asset": "skill-email-writer-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-email-writer-1.1.0.zip"
+      }
+    },
+    {
+      "id": "figma-expert",
+      "kind": "skill",
+      "name": "Figma Expert",
+      "version": "1.1.0",
+      "description": "Figma design expert for components, auto-layout, design systems, and developer handoff",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/figma-expert",
+        "release_asset": "skill-figma-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-figma-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "gcp",
+      "kind": "skill",
+      "name": "Gcp",
+      "version": "1.1.0",
+      "description": "Google Cloud Platform expert for gcloud CLI, GKE, Cloud Run, and managed services",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/gcp",
+        "release_asset": "skill-gcp-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-gcp-1.1.0.zip"
+      }
+    },
+    {
+      "id": "git-expert",
+      "kind": "skill",
+      "name": "Git Expert",
+      "version": "1.1.0",
+      "description": "Git operations expert for branching, rebasing, conflicts, and workflows",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/git-expert",
+        "release_asset": "skill-git-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-git-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "github",
+      "kind": "skill",
+      "name": "Github",
+      "version": "1.1.0",
+      "description": "GitHub operations expert for PRs, issues, code review, Actions, and gh CLI",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/github",
+        "release_asset": "skill-github-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-github-1.1.0.zip"
+      }
+    },
+    {
+      "id": "golang-expert",
+      "kind": "skill",
+      "name": "Golang Expert",
+      "version": "1.1.0",
+      "description": "Go programming expert for goroutines, channels, interfaces, modules, and concurrency patterns",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/golang-expert",
+        "release_asset": "skill-golang-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-golang-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "graphql-expert",
+      "kind": "skill",
+      "name": "Graphql Expert",
+      "version": "1.1.0",
+      "description": "GraphQL expert for schema design, resolvers, subscriptions, and performance optimization",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/graphql-expert",
+        "release_asset": "skill-graphql-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-graphql-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "helm",
+      "kind": "skill",
+      "name": "Helm",
+      "version": "1.1.0",
+      "description": "Helm chart expert for Kubernetes package management, templating, and dependency management",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/helm",
+        "release_asset": "skill-helm-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-helm-1.1.0.zip"
+      }
+    },
+    {
+      "id": "interview-prep",
+      "kind": "skill",
+      "name": "Interview Prep",
+      "version": "1.1.0",
+      "description": "Technical interview preparation expert for algorithms, system design, and behavioral questions",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/interview-prep",
+        "release_asset": "skill-interview-prep-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-interview-prep-1.1.0.zip"
+      }
+    },
+    {
+      "id": "jira",
+      "kind": "skill",
+      "name": "Jira",
+      "version": "1.1.0",
+      "description": "Jira project management expert for issues, sprints, workflows, and reporting",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/jira",
+        "release_asset": "skill-jira-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-jira-1.1.0.zip"
+      }
+    },
+    {
+      "id": "kubernetes",
+      "kind": "skill",
+      "name": "Kubernetes",
+      "version": "1.1.0",
+      "description": "Kubernetes operations expert for kubectl, pods, deployments, and debugging",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/kubernetes",
+        "release_asset": "skill-kubernetes-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-kubernetes-1.1.0.zip"
+      }
+    },
+    {
+      "id": "linear-tools",
+      "kind": "skill",
+      "name": "Linear Tools",
+      "version": "1.1.0",
+      "description": "Linear project management expert for issues, cycles, projects, and workflow automation",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/linear-tools",
+        "release_asset": "skill-linear-tools-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-linear-tools-1.1.0.zip"
+      }
+    },
+    {
+      "id": "linux-networking",
+      "kind": "skill",
+      "name": "Linux Networking",
+      "version": "1.1.0",
+      "description": "Linux networking expert for iptables, nftables, routing, DNS, and network troubleshooting",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/linux-networking",
+        "release_asset": "skill-linux-networking-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-linux-networking-1.1.0.zip"
+      }
+    },
+    {
+      "id": "llm-finetuning",
+      "kind": "skill",
+      "name": "Llm Finetuning",
+      "version": "1.1.0",
+      "description": "LLM fine-tuning expert for LoRA, QLoRA, dataset preparation, and training optimization",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/llm-finetuning",
+        "release_asset": "skill-llm-finetuning-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-llm-finetuning-1.1.0.zip"
+      }
+    },
+    {
+      "id": "ml-engineer",
+      "kind": "skill",
+      "name": "Ml Engineer",
+      "version": "1.1.0",
+      "description": "Machine learning engineer expert for PyTorch, scikit-learn, model evaluation, and MLOps",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/ml-engineer",
+        "release_asset": "skill-ml-engineer-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-ml-engineer-1.1.0.zip"
+      }
+    },
+    {
+      "id": "mongodb",
+      "kind": "skill",
+      "name": "Mongodb",
+      "version": "1.1.0",
+      "description": "MongoDB operations expert for queries, aggregation pipelines, indexes, and schema design",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/mongodb",
+        "release_asset": "skill-mongodb-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-mongodb-1.1.0.zip"
+      }
+    },
+    {
+      "id": "nextjs-expert",
+      "kind": "skill",
+      "name": "Nextjs Expert",
+      "version": "1.1.0",
+      "description": "Next.js expert for App Router, SSR/SSG, API routes, middleware, and deployment",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/nextjs-expert",
+        "release_asset": "skill-nextjs-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-nextjs-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "nginx",
+      "kind": "skill",
+      "name": "Nginx",
+      "version": "1.1.0",
+      "description": "Nginx configuration expert for reverse proxy, load balancing, TLS, and performance tuning",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/nginx",
+        "release_asset": "skill-nginx-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-nginx-1.1.0.zip"
+      }
+    },
+    {
+      "id": "notion",
+      "kind": "skill",
+      "name": "Notion",
+      "version": "1.1.0",
+      "description": "Notion workspace management and content creation specialist",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/notion",
+        "release_asset": "skill-notion-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-notion-1.1.0.zip"
+      }
+    },
+    {
+      "id": "oauth-expert",
+      "kind": "skill",
+      "name": "Oauth Expert",
+      "version": "1.1.0",
+      "description": "OAuth 2.0 and OpenID Connect expert for authorization flows, PKCE, and token management",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/oauth-expert",
+        "release_asset": "skill-oauth-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-oauth-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "openapi-expert",
+      "kind": "skill",
+      "name": "Openapi Expert",
+      "version": "1.1.0",
+      "description": "OpenAPI/Swagger expert for API specification design, validation, and code generation",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/openapi-expert",
+        "release_asset": "skill-openapi-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-openapi-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "pdf-reader",
+      "kind": "skill",
+      "name": "Pdf Reader",
+      "version": "1.1.0",
+      "description": "PDF content extraction and analysis specialist",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/pdf-reader",
+        "release_asset": "skill-pdf-reader-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-pdf-reader-1.1.0.zip"
+      }
+    },
+    {
+      "id": "postgres-expert",
+      "kind": "skill",
+      "name": "Postgres Expert",
+      "version": "1.1.0",
+      "description": "PostgreSQL expert for query optimization, indexing, extensions, and database administration",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/postgres-expert",
+        "release_asset": "skill-postgres-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-postgres-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "presentation",
+      "kind": "skill",
+      "name": "Presentation",
+      "version": "1.1.0",
+      "description": "Presentation expert for slide structure, storytelling, visual design, and audience engagement",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/presentation",
+        "release_asset": "skill-presentation-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-presentation-1.1.0.zip"
+      }
+    },
+    {
+      "id": "project-manager",
+      "kind": "skill",
+      "name": "Project Manager",
+      "version": "1.1.0",
+      "description": "Project management expert for Agile, estimation, risk management, and stakeholder communication",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/project-manager",
+        "release_asset": "skill-project-manager-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-project-manager-1.1.0.zip"
+      }
+    },
+    {
+      "id": "prometheus",
+      "kind": "skill",
+      "name": "Prometheus",
+      "version": "1.1.0",
+      "description": "Prometheus monitoring expert for PromQL, alerting rules, Grafana dashboards, and observability",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/prometheus",
+        "release_asset": "skill-prometheus-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-prometheus-1.1.0.zip"
+      }
+    },
+    {
+      "id": "prompt-engineer",
+      "kind": "skill",
+      "name": "Prompt Engineer",
+      "version": "1.1.0",
+      "description": "Prompt engineering expert for chain-of-thought, few-shot learning, evaluation, and LLM optimization",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/prompt-engineer",
+        "release_asset": "skill-prompt-engineer-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-prompt-engineer-1.1.0.zip"
+      }
+    },
+    {
+      "id": "python-expert",
+      "kind": "skill",
+      "name": "Python Expert",
+      "version": "1.1.0",
+      "description": "Python expert for stdlib, packaging, type hints, async/await, and performance optimization",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/python-expert",
+        "release_asset": "skill-python-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-python-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "react-expert",
+      "kind": "skill",
+      "name": "React Expert",
+      "version": "1.1.0",
+      "description": "React expert for hooks, state management, Server Components, and performance optimization",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/react-expert",
+        "release_asset": "skill-react-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-react-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "redis-expert",
+      "kind": "skill",
+      "name": "Redis Expert",
+      "version": "1.1.0",
+      "description": "Redis expert for data structures, caching patterns, Lua scripting, and cluster operations",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/redis-expert",
+        "release_asset": "skill-redis-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-redis-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "regex-expert",
+      "kind": "skill",
+      "name": "Regex Expert",
+      "version": "1.1.0",
+      "description": "Regular expression expert for crafting, debugging, and explaining patterns",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/regex-expert",
+        "release_asset": "skill-regex-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-regex-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "rust-expert",
+      "kind": "skill",
+      "name": "Rust Expert",
+      "version": "1.1.0",
+      "description": "Rust programming expert for ownership, lifetimes, async/await, traits, and unsafe code",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/rust-expert",
+        "release_asset": "skill-rust-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-rust-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "searxng",
+      "kind": "skill",
+      "name": "Searxng",
+      "version": "1.1.0",
+      "description": "Privacy-respecting metasearch specialist using SearXNG instances",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/searxng",
+        "release_asset": "skill-searxng-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-searxng-1.1.0.zip"
+      }
+    },
+    {
+      "id": "security-audit",
+      "kind": "skill",
+      "name": "Security Audit",
+      "version": "1.1.0",
+      "description": "Security audit expert for OWASP Top 10, CVE analysis, code review, and penetration testing methodology",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/security-audit",
+        "release_asset": "skill-security-audit-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-security-audit-1.1.0.zip"
+      }
+    },
+    {
+      "id": "sentry",
+      "kind": "skill",
+      "name": "Sentry",
+      "version": "1.1.0",
+      "description": "Sentry error tracking and debugging specialist",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/sentry",
+        "release_asset": "skill-sentry-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-sentry-1.1.0.zip"
+      }
+    },
+    {
+      "id": "shell-scripting",
+      "kind": "skill",
+      "name": "Shell Scripting",
+      "version": "1.1.0",
+      "description": "Shell scripting expert for Bash, POSIX compliance, error handling, and automation",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/shell-scripting",
+        "release_asset": "skill-shell-scripting-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-shell-scripting-1.1.0.zip"
+      }
+    },
+    {
+      "id": "slack-tools",
+      "kind": "skill",
+      "name": "Slack Tools",
+      "version": "1.1.0",
+      "description": "Slack workspace management and automation specialist",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/slack-tools",
+        "release_asset": "skill-slack-tools-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-slack-tools-1.1.0.zip"
+      }
+    },
+    {
+      "id": "sql-analyst",
+      "kind": "skill",
+      "name": "Sql Analyst",
+      "version": "1.1.0",
+      "description": "SQL query expert for optimization, schema design, and data analysis",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/sql-analyst",
+        "release_asset": "skill-sql-analyst-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-sql-analyst-1.1.0.zip"
+      }
+    },
+    {
+      "id": "sqlite-expert",
+      "kind": "skill",
+      "name": "Sqlite Expert",
+      "version": "1.1.0",
+      "description": "SQLite expert for WAL mode, query optimization, embedded patterns, and advanced features",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/sqlite-expert",
+        "release_asset": "skill-sqlite-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-sqlite-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "sysadmin",
+      "kind": "skill",
+      "name": "Sysadmin",
+      "version": "1.1.0",
+      "description": "System administration expert for Linux, macOS, Windows, services, and monitoring",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/sysadmin",
+        "release_asset": "skill-sysadmin-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-sysadmin-1.1.0.zip"
+      }
+    },
+    {
+      "id": "technical-writer",
+      "kind": "skill",
+      "name": "Technical Writer",
+      "version": "1.1.0",
+      "description": "Technical writing expert for API docs, READMEs, ADRs, and developer documentation",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/technical-writer",
+        "release_asset": "skill-technical-writer-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-technical-writer-1.1.0.zip"
+      }
+    },
+    {
+      "id": "terraform",
+      "kind": "skill",
+      "name": "Terraform",
+      "version": "1.1.0",
+      "description": "Terraform IaC expert for providers, modules, state management, and planning",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/terraform",
+        "release_asset": "skill-terraform-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-terraform-1.1.0.zip"
+      }
+    },
+    {
+      "id": "typescript-expert",
+      "kind": "skill",
+      "name": "Typescript Expert",
+      "version": "1.1.0",
+      "description": "TypeScript expert for type system, generics, utility types, and strict mode patterns",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/typescript-expert",
+        "release_asset": "skill-typescript-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-typescript-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "vector-db",
+      "kind": "skill",
+      "name": "Vector Db",
+      "version": "1.1.0",
+      "description": "Vector database expert for embeddings, similarity search, RAG patterns, and indexing strategies",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/vector-db",
+        "release_asset": "skill-vector-db-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-vector-db-1.1.0.zip"
+      }
+    },
+    {
+      "id": "wasm-expert",
+      "kind": "skill",
+      "name": "Wasm Expert",
+      "version": "1.1.0",
+      "description": "WebAssembly expert for WASI, component model, Rust/C compilation, and browser integration",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/wasm-expert",
+        "release_asset": "skill-wasm-expert-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-wasm-expert-1.1.0.zip"
+      }
+    },
+    {
+      "id": "web-search",
+      "kind": "skill",
+      "name": "Web Search",
+      "version": "1.1.0",
+      "description": "Web search and research specialist for finding and synthesizing information",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/web-search",
+        "release_asset": "skill-web-search-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-web-search-1.1.0.zip"
+      }
+    },
+    {
+      "id": "writing-coach",
+      "kind": "skill",
+      "name": "Writing Coach",
+      "version": "1.1.0",
+      "description": "Writing improvement specialist for grammar, style, clarity, and structure",
+      "tags": [
+        "openfang",
+        "skill"
+      ],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/writing-coach",
+        "release_asset": "skill-writing-coach-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/skill-writing-coach-1.1.0.zip"
       }
     },
     {
       "id": "echo",
       "kind": "utcp-provider",
-      "name": "UTCP Echo",
-      "version": "1.0.0",
-      "description": "Minimal echo tool for UTCP connectivity checks (HTTP backend on :8787).",
-      "tags": ["utcp", "demo", "connectivity"],
+      "name": "UTCP Echo Provider",
+      "version": "1.1.0",
+      "description": "Minimal echo tool for UTCP connectivity checks (requires local echo server on :8787).",
+      "tags": [
+        "openfang",
+        "utcp"
+      ],
       "install": {
         "method": "github_release",
         "repo_path": "utcp/echo",
-        "release_asset": "utcp-echo-1.0.0.zip",
-        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.0.0/utcp-echo-1.0.0.zip"
+        "release_asset": "utcp-echo-1.1.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/utcp-echo-1.1.0.zip"
       }
     }
   ]
