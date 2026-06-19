@@ -24,12 +24,14 @@
           "id": { "type": "string" },
           "kind": {
             "type": "string",
-            "enum": ["skill", "hand", "extension", "utcp-provider"]
+            "enum": ["skill", "hand", "extension", "utcp-provider", "dashboard", "channel"]
           },
           "name": { "type": "string" },
           "version": { "type": "string" },
           "description": { "type": "string" },
           "tags": { "type": "array", "items": { "type": "string" } },
+          "icon": { "type": "string" },
+          "icon_emoji": { "type": "string" },
           "install": {
             "type": "object",
             "required": ["method", "repo_path"],

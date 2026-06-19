@@ -1,0 +1,9 @@
+[pack]
+id = "telegram"
+kind = "channel"
+name = "Telegram Channel"
+version = "1.0.0"
+description = "Telegram bot channel configuration pack"
+
+[install]
+# Zip contains channel.toml + pack.toml

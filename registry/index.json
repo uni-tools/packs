@@ -5,9 +5,48 @@
     "updated_at": "2026-06-19",
     "base_repo": "uni-tools/packs",
     "catalog_url": "https://raw.githubusercontent.com/uni-tools/packs/main/registry/index.json",
-    "latest_release": "v1.1.0"
+    "latest_release": "v1.2.0"
   },
   "items": [
+    {
+      "id": "openfang",
+      "kind": "dashboard",
+      "name": "OpenFang Dashboard",
+      "version": "0.6.9",
+      "description": "Full web dashboard: agents, workflows, app market, channels, and UTCP tools.",
+      "tags": [
+        "openfang",
+        "dashboard",
+        "ui"
+      ],
+      "icon": "https://raw.githubusercontent.com/RightNow-AI/openfang/master/crates/openfang-api/static/logo.png",
+      "icon_emoji": "📊",
+      "install": {
+        "method": "github_release",
+        "repo_path": "dashboard/openfang",
+        "release_asset": "dashboard-openfang-0.6.9.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.2.0/dashboard-openfang-0.6.9.zip"
+      }
+    },
+    {
+      "id": "telegram",
+      "kind": "channel",
+      "name": "Telegram Channel",
+      "version": "1.0.0",
+      "description": "Telegram bot channel pack — merges channel config into config.toml and hot-reloads.",
+      "tags": [
+        "openfang",
+        "channel",
+        "telegram"
+      ],
+      "icon_emoji": "💬",
+      "install": {
+        "method": "github_release",
+        "repo_path": "channel/telegram",
+        "release_asset": "channel-telegram-1.0.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.2.0/channel-telegram-1.0.0.zip"
+      }
+    },
     {
       "id": "aws",
       "kind": "extension",

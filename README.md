@@ -1,6 +1,6 @@
 # uni-tools/packs
 
-Official **Pack registry** for [uni-tools](https://github.com/uni-tools) / OpenFang: Skill, Hand, Extension, and UTCP provider bundles. Install on demand — nothing is baked into the OS binary.
+Official **Pack registry** for [uni-tools](https://github.com/uni-tools) / OpenFang: Skill, Hand, Extension, UTCP provider, Dashboard, and Channel bundles. Install on demand — nothing is baked into the OS binary.
 
 ## Catalog
 
@@ -24,10 +24,12 @@ packs/
 ├── skill/<id>/             # SKILL.md (+ optional scripts)
 ├── hand/<id>/              # HAND.toml + SKILL.md
 ├── extension/<id>/         # integration.toml (MCP template)
-└── utcp/<id>/              # provider.json
+├── utcp/<id>/              # provider.json
+├── dashboard/<id>/         # pack.toml + static/ (optional UI)
+└── channel/<id>/           # pack.toml + channel.toml
 ```
 
-## Bundled packs (v1.1.0)
+## Catalog packs (v1.2.0)
 
 | Kind | Count | Install target on disk |
 |------|-------|------------------------|
@@ -35,15 +37,17 @@ packs/
 | hand | 9 | `~/.openfang/hands/<id>/` |
 | extension | 25 | `~/.openfang/integrations.toml` + MCP |
 | utcp-provider | 1 | `~/.openfang/utcp/providers.d/<id>.json` |
+| dashboard | 1 | `~/.openfang/packs/dashboard/` |
+| channel | 1 | `~/.openfang/packs/channels/<id>/` + `config.toml` |
 
-**Total: 96 packs** exported from OpenFang bundled assets.
+**Total: 98 packs** (96 OpenFang bundled exports + Dashboard + Telegram channel).
 
 Refresh from OpenFang source tree:
 
 ```bash
 python3 scripts/sync-from-openfang.py
 bash scripts/validate-index.sh
-bash scripts/build-release.sh 1.1.0
+bash scripts/build-release.sh 1.2.0
 ```
 
 ## Install flow (target)
@@ -95,7 +99,7 @@ unzip -d ~/.openfang/hands/browser /tmp/pack.zip
 
 ## Adding a pack
 
-1. Add files under `skill/`, `hand/`, `extension/`, or `utcp/`.
+1. Add files under `skill/`, `hand/`, `extension/`, `utcp/`, `dashboard/`, or `channel/`.
 2. Append an entry to `registry/index.json`.
 3. Run `bash scripts/validate-index.sh`.
 4. Tag a release so CI uploads zips.

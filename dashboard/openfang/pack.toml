@@ -1,0 +1,10 @@
+[pack]
+id = "openfang"
+kind = "dashboard"
+name = "OpenFang Dashboard"
+version = "0.6.9"
+description = "Full web dashboard (Alpine.js SPA) for OpenFang"
+
+[install]
+# Zip layout: static/ mirroring crates/openfang-api/static/
+# Publish: zip -r dashboard-openfang.zip static pack.toml

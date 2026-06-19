@@ -1,0 +1,6 @@
+channel = "telegram"
+bot_token_env = "TELEGRAM_BOT_TOKEN"
+default_agent = "assistant"
+enabled = true
+
+# Requires the Telegram adapter in the daemon binary (all-channels feature or channel feature).

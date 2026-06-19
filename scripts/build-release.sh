@@ -21,6 +21,8 @@ pack_zip() {
     hand) name="hand-${id}-${ver}.zip" ;;
     extension) name="extension-${id}-${ver}.zip" ;;
     utcp-provider) name="utcp-${id}-${ver}.zip" ;;
+    dashboard) name="dashboard-${id}-${ver}.zip" ;;
+    channel) name="channel-${id}-${ver}.zip" ;;
     *) echo "Unknown kind: $kind" >&2; exit 1 ;;
   esac
 
