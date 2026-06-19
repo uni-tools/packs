@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "registry": {
+    "publisher": "uni-tools",
+    "updated_at": "2026-06-19",
+    "base_repo": "uni-tools/packs"
+  },
+  "items": [
+    {
+      "id": "hello-world",
+      "kind": "skill",
+      "name": "Hello World",
+      "version": "1.0.0",
+      "description": "Minimal demo skill to verify uni-tools pack install from GitHub.",
+      "tags": ["demo", "general", "uni-tools"],
+      "install": {
+        "method": "github_release",
+        "repo_path": "skill/hello-world",
+        "release_asset": "skill-hello-world-1.0.0.zip"
+      }
+    },
+    {
+      "id": "browser",
+      "kind": "hand",
+      "name": "Browser Hand",
+      "version": "1.0.0",
+      "description": "Autonomous web browser — navigates sites, fills forms, and completes multi-step web tasks.",
+      "tags": ["browser", "automation", "productivity"],
+      "install": {
+        "method": "github_release",
+        "repo_path": "hand/browser",
+        "release_asset": "hand-browser-1.0.0.zip"
+      }
+    },
+    {
+      "id": "github",
+      "kind": "extension",
+      "name": "GitHub",
+      "version": "1.0.0",
+      "description": "GitHub repositories, issues, and PRs via the official MCP server.",
+      "tags": ["devtools", "git", "mcp"],
+      "install": {
+        "method": "github_release",
+        "repo_path": "extension/github",
+        "release_asset": "extension-github-1.0.0.zip"
+      }
+    },
+    {
+      "id": "echo",
+      "kind": "utcp-provider",
+      "name": "UTCP Echo",
+      "version": "1.0.0",
+      "description": "Minimal echo tool for UTCP connectivity checks (HTTP backend on :8787).",
+      "tags": ["utcp", "demo", "connectivity"],
+      "install": {
+        "method": "github_release",
+        "repo_path": "utcp/echo",
+        "release_asset": "utcp-echo-1.0.0.zip"
+      }
+    }
+  ]
+}

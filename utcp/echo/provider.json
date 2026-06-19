@@ -1,0 +1,42 @@
+{
+  "manual_version": "1.0.0",
+  "utcp_version": "0.3.0",
+  "allowed_communication_protocols": [
+    "http"
+  ],
+  "info": {
+    "title": "UTCP Echo Provider",
+    "version": "1.0.0",
+    "description": "Minimal echo tool for UTCP connectivity checks (requires local echo server on :8787)."
+  },
+  "tools": [
+    {
+      "name": "echo_text",
+      "description": "Echo input text for connectivity check",
+      "inputs": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Input text"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "outputs": {
+        "type": "object"
+      },
+      "tool_call_template": {
+        "call_template_type": "http",
+        "name": "echo-http",
+        "url": "http://127.0.0.1:8787/echo",
+        "http_method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

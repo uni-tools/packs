@@ -1,0 +1,29 @@
+name: Release Packs
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate registry
+        run: bash scripts/validate-index.sh
+
+      - name: Build zip assets
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq zip
+          bash scripts/build-release.sh "${GITHUB_REF_NAME#v}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/uni-tools/packs/registry/schema.json",
+  "title": "uni-tools Pack Registry",
+  "type": "object",
+  "required": ["schema_version", "registry", "items"],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "registry": {
+      "type": "object",
+      "required": ["publisher", "updated_at"],
+      "properties": {
+        "publisher": { "type": "string" },
+        "updated_at": { "type": "string", "format": "date" },
+        "base_repo": { "type": "string" }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "name", "version", "description", "install"],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": ["skill", "hand", "extension", "utcp-provider"]
+          },
+          "name": { "type": "string" },
+          "version": { "type": "string" },
+          "description": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "install": {
+            "type": "object",
+            "required": ["method", "repo_path"],
+            "properties": {
+              "method": {
+                "type": "string",
+                "enum": ["github_release", "git_sparse", "local_path"]
+              },
+              "repo_path": { "type": "string" },
+              "release_asset": { "type": "string" },
+              "sha256": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
