@@ -32,6 +32,11 @@
           "tags": { "type": "array", "items": { "type": "string" } },
           "icon": { "type": "string" },
           "icon_emoji": { "type": "string" },
+          "category": { "type": "string" },
+          "author": { "type": "string" },
+          "downloads": { "type": "integer", "minimum": 0 },
+          "screenshots": { "type": "array", "items": { "type": "string", "format": "uri" } },
+          "min_shell_version": { "type": "string" },
           "install": {
             "type": "object",
             "required": ["method", "repo_path"],

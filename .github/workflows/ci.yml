@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate registry index
+        run: bash scripts/validate-index.sh
+
+      - name: Validate JSON schema shape
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          schema = json.loads(Path("registry/schema.json").read_text())
+          index = json.loads(Path("registry/index.json").read_text())
+          assert index.get("schema_version") == schema["properties"]["schema_version"]["const"]
+          for item in index["items"]:
+              assert "id" in item and "kind" in item and "install" in item
+          print(f"OK: {len(index['items'])} registry items")
+          PY
+
+      - name: Scan pack zips for unsafe paths (sample build)
+        run: |
+          bash scripts/build-release.sh ci-test
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          dist = Path("dist")
+          for z in dist.glob("*.zip"):
+              with zipfile.ZipFile(z) as archive:
+                  for name in archive.namelist():
+                      if name.startswith("/") or ".." in name:
+                          raise SystemExit(f"unsafe path in {z.name}: {name}")
+                      info = archive.getinfo(name)
+                      if info.file_size > 20 * 1024 * 1024:
+                          raise SystemExit(f"file too large in {z.name}: {name}")
+          print("zip safety scan passed")
+          PY

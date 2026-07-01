@@ -1710,6 +1710,9 @@
       "name": "Hello World",
       "version": "1.0.0",
       "description": "uni-tools 插件示例：UTCP ping 与剪贴板演示。",
+      "category": "开发",
+      "author": "uni-tools",
+      "downloads": 1200,
       "tags": ["uni-tools", "plugin", "demo"],
       "icon_emoji": "👋",
       "install": {
@@ -1725,6 +1728,9 @@
       "name": "JSON 格式化",
       "version": "1.0.0",
       "description": "格式化、压缩 JSON，无需联网。",
+      "category": "开发",
+      "author": "uni-tools",
+      "downloads": 980,
       "tags": ["uni-tools", "plugin", "json", "工具"],
       "icon_emoji": "{ }",
       "install": {
@@ -1740,6 +1746,9 @@
       "name": "Base64 编解码",
       "version": "1.0.0",
       "description": "文本与 Base64 互转。",
+      "category": "工具",
+      "author": "uni-tools",
+      "downloads": 640,
       "tags": ["uni-tools", "plugin", "base64", "工具"],
       "icon_emoji": "🔤",
       "install": {
@@ -1755,6 +1764,9 @@
       "name": "时间戳转换",
       "version": "1.0.0",
       "description": "Unix 时间戳与本地日期时间互转。",
+      "category": "工具",
+      "author": "uni-tools",
+      "downloads": 520,
       "tags": ["uni-tools", "plugin", "timestamp", "工具"],
       "icon_emoji": "🕐",
       "install": {
@@ -1770,6 +1782,9 @@
       "name": "颜色转换",
       "version": "1.0.0",
       "description": "HEX / RGB / HSL 颜色格式转换。",
+      "category": "工具",
+      "author": "uni-tools",
+      "downloads": 410,
       "tags": ["uni-tools", "plugin", "color", "工具"],
       "icon_emoji": "🎨",
       "install": {

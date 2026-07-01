@@ -53,3 +53,5 @@ for item in json.loads((root / "registry/index.json").read_text())["items"]:
 count = len(list(out.glob("*.zip")))
 print(f"Release {os.environ['PACKS_VERSION']}: {count} assets in dist/")
 PY
+
+python3 "${ROOT}/scripts/sync-sha256-to-index.py"

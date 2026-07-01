@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>uni-tools 插件市场</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #818cf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", system-ui, sans-serif;
+      background: linear-gradient(160deg, #0f172a, #1e1b4b 55%, #0f172a);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 28px 24px 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .sub { color: var(--muted); margin: 0 0 16px; }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    input, select {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    input { flex: 1; min-width: 200px; }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 8px 24px 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-head { display: flex; gap: 12px; align-items: center; }
+    .emoji {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center; font-size: 22px;
+      background: rgba(129,140,248,0.2);
+    }
+    .name { font-weight: 600; font-size: 16px; }
+    .meta { color: var(--muted); font-size: 12px; }
+    .desc { color: #cbd5e1; font-size: 13px; line-height: 1.5; min-height: 40px; }
+    .actions { display: flex; gap: 8px; margin-top: auto; }
+    button, a.btn {
+      border: none; border-radius: 10px; padding: 8px 12px;
+      font-size: 13px; cursor: pointer; text-decoration: none;
+      display: inline-block; text-align: center;
+    }
+    .primary { background: var(--accent); color: #fff; }
+    .ghost { background: transparent; color: var(--muted); border: 1px solid rgba(255,255,255,0.12); }
+    .banner {
+      background: rgba(129,140,248,0.12);
+      border: 1px solid rgba(129,140,248,0.25);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: #c7d2fe;
+    }
+    .empty { color: var(--muted); padding: 24px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>uni-tools 插件市场</h1>
+    <p class="sub">浏览 Registry 中的 Pack 与 UI 插件。复制 ID 后在 uni-tools Shell「应用市场」中搜索安装。</p>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="搜索名称、描述、标签…">
+      <select id="kind">
+        <option value="">全部类型</option>
+        <option value="ui-plugin">UI 插件</option>
+        <option value="skill">Skill</option>
+        <option value="hand">Hand</option>
+        <option value="extension">Extension</option>
+        <option value="utcp-provider">UTCP</option>
+      </select>
+    </div>
+  </header>
+  <main>
+    <div class="banner" id="status">正在加载 registry…</div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>没有匹配的条目</div>
+  </main>
+  <script>
+    const REGISTRY_URL = '../registry/index.json';
+    const state = { items: [], query: '', kind: '' };
+
+    function render() {
+      const q = state.query.trim().toLowerCase();
+      const filtered = state.items.filter(item => {
+        if (state.kind && item.kind !== state.kind) return false;
+        if (!q) return true;
+        const hay = (item.name + ' ' + item.id + ' ' + item.description + ' ' + (item.tags || []).join(' ')).toLowerCase();
+        return hay.includes(q);
+      });
+      filtered.sort((a, b) => (b.downloads || 0) - (a.downloads || 0) || a.name.localeCompare(b.name));
+      const grid = document.getElementById('grid');
+      const empty = document.getElementById('empty');
+      grid.innerHTML = '';
+      empty.hidden = filtered.length > 0;
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-head">
+            <div class="emoji">${item.icon_emoji || '📦'}</div>
+            <div>
+              <div class="name">${escapeHtml(item.name)}</div>
+              <div class="meta">${escapeHtml(item.kind)} · v${escapeHtml(item.version || '?')}${item.author ? ' · ' + escapeHtml(item.author) : ''}</div>
+            </div>
+          </div>
+          <div class="desc">${escapeHtml(item.description || '')}</div>
+          <div class="actions">
+            <button class="btn primary" type="button" data-id="${escapeHtml(item.id)}" data-kind="${escapeHtml(item.kind)}" onclick="copyInstallId(this)">复制安装 ID</button>
+            <a class="btn ghost" href="${escapeHtml(item.install?.download_url || '#')}" target="_blank" rel="noopener">下载 zip</a>
+          </div>`;
+        grid.appendChild(card);
+      });
+      document.getElementById('status').textContent =
+        `共 ${state.items.length} 个条目 · 显示 ${filtered.length} 个 · 数据来自 registry/index.json`;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function copyInstallId(btn) {
+      const text = btn.dataset.kind + '/' + btn.dataset.id;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '已复制';
+        setTimeout(() => { btn.textContent = '复制安装 ID'; }, 1500);
+      }).catch(() => alert('请手动复制: ' + text));
+    }
+
+    async function load() {
+      try {
+        const resp = await fetch(REGISTRY_URL);
+        const data = await resp.json();
+        state.items = data.items || [];
+        render();
+      } catch (e) {
+        document.getElementById('status').textContent = '加载失败: ' + e.message;
+      }
+    }
+
+    document.getElementById('search').addEventListener('input', e => {
+      state.query = e.target.value;
+      render();
+    });
+    document.getElementById('kind').addEventListener('change', e => {
+      state.kind = e.target.value;
+      render();
+    });
+    load();
+  </script>
+</body>
+</html>
