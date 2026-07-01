@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Base64 编解码</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "PingFang SC", sans-serif; background: #0f172a; color: #e2e8f0; padding: 16px; }
+    h1 { font-size: 1.1rem; margin: 0 0 12px; }
+    textarea { width: 100%; height: 28vh; padding: 12px; border-radius: 10px; border: 1px solid #334155; background: #1e293b; color: #f8fafc; font-family: ui-monospace, monospace; font-size: 13px; }
+    .row { display: flex; gap: 8px; margin: 10px 0; }
+    button { padding: 8px 14px; border: none; border-radius: 8px; background: #6366f1; color: #fff; cursor: pointer; }
+    button.secondary { background: #475569; }
+    .err { color: #f87171; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Base64 编解码</h1>
+  <textarea id="input" placeholder="输入文本或 Base64…"></textarea>
+  <div class="row">
+    <button id="enc">编码 → Base64</button>
+    <button id="dec">解码 ← Base64</button>
+    <button id="copy" class="secondary">复制输出</button>
+  </div>
+  <div class="err" id="err"></div>
+  <textarea id="output" readonly placeholder="结果…"></textarea>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $('enc').onclick = () => {
+      try {
+        $('err').textContent = '';
+        $('output').value = btoa(unescape(encodeURIComponent($('input').value)));
+      } catch (e) { $('err').textContent = String(e); }
+    };
+    $('dec').onclick = () => {
+      try {
+        $('err').textContent = '';
+        $('output').value = decodeURIComponent(escape(atob($('input').value.trim())));
+      } catch (e) { $('err').textContent = '无效的 Base64'; }
+    };
+    $('copy').onclick = async () => {
+      const t = $('output').value;
+      if (!t) return;
+      if (window.uniTools?.clipboard) await uniTools.clipboard.writeText(t);
+      else await navigator.clipboard.writeText(t);
+    };
+  </script>
+</body>
+</html>

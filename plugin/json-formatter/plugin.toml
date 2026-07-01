@@ -1,0 +1,12 @@
+[plugin]
+id = "json-formatter"
+name = "JSON 格式化"
+version = "1.0.0"
+type = "ui"
+entry = "ui/index.html"
+
+[plugin.features]
+keywords = ["json", "格式化", "format", "minify"]
+
+[plugin.permissions]
+clipboard = true

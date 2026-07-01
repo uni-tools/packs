@@ -24,7 +24,7 @@
           "id": { "type": "string" },
           "kind": {
             "type": "string",
-            "enum": ["skill", "hand", "extension", "utcp-provider", "dashboard", "channel"]
+            "enum": ["skill", "hand", "extension", "utcp-provider", "dashboard", "channel", "ui-plugin"]
           },
           "name": { "type": "string" },
           "version": { "type": "string" },

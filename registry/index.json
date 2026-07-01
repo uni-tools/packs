@@ -2,10 +2,10 @@
   "schema_version": 1,
   "registry": {
     "publisher": "uni-tools",
-    "updated_at": "2026-06-19",
+    "updated_at": "2026-06-30",
     "base_repo": "uni-tools/packs",
     "catalog_url": "https://raw.githubusercontent.com/uni-tools/packs/main/registry/index.json",
-    "latest_release": "v1.3.0"
+    "latest_release": "v1.4.0"
   },
   "items": [
     {
@@ -1702,6 +1702,81 @@
         "repo_path": "utcp/echo",
         "release_asset": "utcp-echo-1.1.0.zip",
         "download_url": "https://github.com/uni-tools/packs/releases/download/v1.1.0/utcp-echo-1.1.0.zip"
+      }
+    },
+    {
+      "id": "hello-world",
+      "kind": "ui-plugin",
+      "name": "Hello World",
+      "version": "1.0.0",
+      "description": "uni-tools 插件示例：UTCP ping 与剪贴板演示。",
+      "tags": ["uni-tools", "plugin", "demo"],
+      "icon_emoji": "👋",
+      "install": {
+        "method": "github_release",
+        "repo_path": "plugin/hello-world",
+        "release_asset": "plugin-hello-world-1.0.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.4.0/plugin-hello-world-1.0.0.zip"
+      }
+    },
+    {
+      "id": "json-formatter",
+      "kind": "ui-plugin",
+      "name": "JSON 格式化",
+      "version": "1.0.0",
+      "description": "格式化、压缩 JSON，无需联网。",
+      "tags": ["uni-tools", "plugin", "json", "工具"],
+      "icon_emoji": "{ }",
+      "install": {
+        "method": "github_release",
+        "repo_path": "plugin/json-formatter",
+        "release_asset": "plugin-json-formatter-1.0.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.4.0/plugin-json-formatter-1.0.0.zip"
+      }
+    },
+    {
+      "id": "base64-codec",
+      "kind": "ui-plugin",
+      "name": "Base64 编解码",
+      "version": "1.0.0",
+      "description": "文本与 Base64 互转。",
+      "tags": ["uni-tools", "plugin", "base64", "工具"],
+      "icon_emoji": "🔤",
+      "install": {
+        "method": "github_release",
+        "repo_path": "plugin/base64-codec",
+        "release_asset": "plugin-base64-codec-1.0.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.4.0/plugin-base64-codec-1.0.0.zip"
+      }
+    },
+    {
+      "id": "timestamp-converter",
+      "kind": "ui-plugin",
+      "name": "时间戳转换",
+      "version": "1.0.0",
+      "description": "Unix 时间戳与本地日期时间互转。",
+      "tags": ["uni-tools", "plugin", "timestamp", "工具"],
+      "icon_emoji": "🕐",
+      "install": {
+        "method": "github_release",
+        "repo_path": "plugin/timestamp-converter",
+        "release_asset": "plugin-timestamp-converter-1.0.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.4.0/plugin-timestamp-converter-1.0.0.zip"
+      }
+    },
+    {
+      "id": "color-converter",
+      "kind": "ui-plugin",
+      "name": "颜色转换",
+      "version": "1.0.0",
+      "description": "HEX / RGB / HSL 颜色格式转换。",
+      "tags": ["uni-tools", "plugin", "color", "工具"],
+      "icon_emoji": "🎨",
+      "install": {
+        "method": "github_release",
+        "repo_path": "plugin/color-converter",
+        "release_asset": "plugin-color-converter-1.0.0.zip",
+        "download_url": "https://github.com/uni-tools/packs/releases/download/v1.4.0/plugin-color-converter-1.0.0.zip"
       }
     }
   ]

@@ -26,7 +26,8 @@ packs/
 ├── extension/<id>/         # integration.toml (MCP template)
 ├── utcp/<id>/              # provider.json
 ├── dashboard/<id>/         # pack.toml + static/ (optional UI)
-└── channel/<id>/           # pack.toml + channel.toml
+├── channel/<id>/           # pack.toml + channel.toml
+└── plugin/<id>/            # plugin.toml + ui/ (Shell 小应用)
 ```
 
 ## Catalog packs (v1.2.0)
@@ -39,8 +40,9 @@ packs/
 | utcp-provider | 1 | `~/.openfang/utcp/providers.d/<id>.json` |
 | dashboard | 1 | `~/.openfang/packs/dashboard/` |
 | channel | 1 | `~/.openfang/packs/channels/<id>/` + `config.toml` |
+| ui-plugin | 5 | `~/.uni-tools/plugins/<id>/` |
 
-**Total: 98 packs** (96 OpenFang bundled exports + Dashboard + Telegram channel).
+**Total: 103 packs** (96 OpenFang bundled exports + Dashboard + Telegram channel + 5 UI plugins).
 
 Refresh from OpenFang source tree:
 

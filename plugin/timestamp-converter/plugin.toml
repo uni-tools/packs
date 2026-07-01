@@ -1,0 +1,12 @@
+[plugin]
+id = "timestamp-converter"
+name = "时间戳转换"
+version = "1.0.0"
+type = "ui"
+entry = "ui/index.html"
+
+[plugin.features]
+keywords = ["timestamp", "时间戳", "unix", "日期"]
+
+[plugin.permissions]
+clipboard = true

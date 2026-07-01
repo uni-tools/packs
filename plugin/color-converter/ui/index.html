@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>颜色转换</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "PingFang SC", sans-serif; background: #0f172a; color: #e2e8f0; padding: 16px; }
+    h1 { font-size: 1.1rem; margin: 0 0 16px; }
+    .swatch { width: 100%; height: 80px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 12px; }
+    input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #f8fafc; margin-bottom: 12px; font-family: ui-monospace, monospace; }
+    pre { background: #1e293b; padding: 12px; border-radius: 10px; font-size: 13px; }
+    button { padding: 8px 14px; border: none; border-radius: 8px; background: #6366f1; color: #fff; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>颜色转换</h1>
+  <div class="swatch" id="swatch"></div>
+  <input id="hex" placeholder="#6366f1 或 6366f1" value="#6366f1">
+  <pre id="out"></pre>
+  <button id="copy" style="margin-top:12px">复制 HEX</button>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    function parseHex(raw) {
+      let h = raw.trim().replace(/^#/, '');
+      if (h.length === 3) h = h.split('').map(c => c + c).join('');
+      if (!/^[0-9a-fA-F]{6}$/.test(h)) throw new Error('无效 HEX');
+      return { r: parseInt(h.slice(0,2),16), g: parseInt(h.slice(2,4),16), b: parseInt(h.slice(4,6),16), hex: '#' + h.toLowerCase() };
+    }
+    function rgbToHsl(r,g,b) {
+      r/=255; g/=255; b/=255;
+      const max=Math.max(r,g,b), min=Math.min(r,g,b), l=(max+min)/2;
+      if (max===min) return {h:0,s:0,l:l*100};
+      const d=max-min;
+      const s=l>0.5?d/(2-max-min):d/(max+min);
+      let h=0;
+      if (max===r) h=(g-b)/d+(g<b?6:0);
+      else if (max===g) h=(b-r)/d+2;
+      else h=(r-g)/d+4;
+      return {h:Math.round(h*60), s:Math.round(s*100), l:Math.round(l*100)};
+    }
+    function update() {
+      try {
+        const c = parseHex($('hex').value);
+        $('swatch').style.background = c.hex;
+        const hsl = rgbToHsl(c.r,c.g,c.b);
+        $('out').textContent = [
+          'HEX: ' + c.hex,
+          'RGB: rgb(' + c.r + ', ' + c.g + ', ' + c.b + ')',
+          'HSL: hsl(' + hsl.h + ', ' + hsl.s + '%, ' + hsl.l + '%)',
+        ].join('\n');
+      } catch (e) { $('out').textContent = e.message; }
+    }
+    $('hex').oninput = update;
+    $('copy').onclick = async () => {
+      const c = parseHex($('hex').value);
+      if (window.uniTools?.clipboard) await uniTools.clipboard.writeText(c.hex);
+      else await navigator.clipboard.writeText(c.hex);
+    };
+    update();
+  </script>
+</body>
+</html>

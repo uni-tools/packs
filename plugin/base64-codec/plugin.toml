@@ -1,0 +1,12 @@
+[plugin]
+id = "base64-codec"
+name = "Base64 编解码"
+version = "1.0.0"
+type = "ui"
+entry = "ui/index.html"
+
+[plugin.features]
+keywords = ["base64", "编码", "解码", "encode"]
+
+[plugin.permissions]
+clipboard = true

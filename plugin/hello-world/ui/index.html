@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Hello World</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background:#111; color:#eee; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; }
+    .box { text-align:center; max-width:520px; padding:1rem; }
+    button { margin:.35rem; padding:.6rem 1rem; border-radius:8px; border:none; background:#7c3aed; color:#fff; cursor:pointer; }
+    pre { text-align:left; background:#1c1c28; padding:.75rem; border-radius:8px; overflow:auto; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Hello uni-tools</h1>
+    <p id="api">OpenFang API: …</p>
+    <p id="pid">Plugin: …</p>
+    <button id="ping">Ping UTCP Echo</button>
+    <button id="clip">Clipboard round-trip</button>
+    <pre id="out"></pre>
+  </div>
+  <script>
+    const uni = window.uniTools;
+    if (!uni) {
+      document.getElementById('out').textContent = 'window.uniTools not injected — open from uni-tools Shell';
+    } else {
+      document.getElementById('pid').textContent = 'Plugin: ' + uni.pluginId();
+      uni.openfangApiUrl().then(url => {
+        document.getElementById('api').textContent = 'OpenFang API: ' + url;
+      });
+      document.getElementById('ping').onclick = async () => {
+        try {
+          const r = await uni.utcpInvoke('echo.ping', { message: 'hello from plugin' });
+          document.getElementById('out').textContent = JSON.stringify(r, null, 2);
+        } catch (e) {
+          document.getElementById('out').textContent = String(e);
+        }
+      };
+      document.getElementById('clip').onclick = async () => {
+        try {
+          const sample = 'uni-tools-' + Date.now();
+          await uni.clipboard.writeText(sample);
+          const back = await uni.clipboard.readText();
+          document.getElementById('out').textContent = 'clipboard OK: ' + back;
+        } catch (e) {
+          document.getElementById('out').textContent = String(e);
+        }
+      };
+    }
+  </script>
+</body>
+</html>

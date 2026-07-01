@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>JSON 格式化</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "PingFang SC", sans-serif; background: #0f172a; color: #e2e8f0; padding: 16px; }
+    h1 { font-size: 1.1rem; margin: 0 0 12px; }
+    textarea { width: 100%; height: 42vh; padding: 12px; border-radius: 10px; border: 1px solid #334155; background: #1e293b; color: #f8fafc; font-family: ui-monospace, monospace; font-size: 13px; resize: vertical; }
+    .row { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; }
+    button { padding: 8px 14px; border: none; border-radius: 8px; background: #6366f1; color: #fff; cursor: pointer; font-size: 13px; }
+    button.secondary { background: #475569; }
+    .err { color: #f87171; font-size: 13px; min-height: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>JSON 格式化</h1>
+  <textarea id="input" placeholder='粘贴 JSON，例如 {"a":1}'></textarea>
+  <div class="row">
+    <button id="fmt">格式化</button>
+    <button id="min" class="secondary">压缩</button>
+    <button id="copy" class="secondary">复制结果</button>
+  </div>
+  <div class="err" id="err"></div>
+  <textarea id="output" placeholder="结果…" readonly></textarea>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    function parse() {
+      const raw = $('input').value.trim();
+      if (!raw) throw new Error('请输入 JSON');
+      return JSON.parse(raw);
+    }
+    $('fmt').onclick = () => {
+      try { $('err').textContent = ''; $('output').value = JSON.stringify(parse(), null, 2); }
+      catch (e) { $('err').textContent = e.message; }
+    };
+    $('min').onclick = () => {
+      try { $('err').textContent = ''; $('output').value = JSON.stringify(parse()); }
+      catch (e) { $('err').textContent = e.message; }
+    };
+    $('copy').onclick = async () => {
+      const t = $('output').value;
+      if (!t) return;
+      if (window.uniTools?.clipboard) await uniTools.clipboard.writeText(t);
+      else await navigator.clipboard.writeText(t);
+    };
+  </script>
+</body>
+</html>

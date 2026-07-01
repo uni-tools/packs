@@ -1,0 +1,15 @@
+[plugin]
+id = "hello-world"
+name = "Hello World"
+version = "1.0.0"
+type = "ui"
+entry = "ui/index.html"
+
+[plugin.features]
+keywords = ["demo", "hello"]
+
+[plugin.permissions]
+clipboard = true
+open_external = true
+notification = true
+utcp_invoke = ["echo.*"]

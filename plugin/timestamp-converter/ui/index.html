@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>时间戳转换</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "PingFang SC", sans-serif; background: #0f172a; color: #e2e8f0; padding: 16px; }
+    h1 { font-size: 1.1rem; margin: 0 0 16px; }
+    label { display: block; font-size: 12px; color: #94a3b8; margin-bottom: 4px; }
+    input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #f8fafc; margin-bottom: 12px; }
+    button { padding: 8px 14px; border: none; border-radius: 8px; background: #6366f1; color: #fff; cursor: pointer; margin-right: 8px; }
+    pre { background: #1e293b; padding: 12px; border-radius: 10px; font-size: 13px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>时间戳转换</h1>
+  <label>Unix 时间戳（秒或毫秒）</label>
+  <input id="ts" type="text" placeholder="例如 1710000000">
+  <label>本地日期时间</label>
+  <input id="dt" type="datetime-local" step="1">
+  <div style="margin:12px 0">
+    <button id="now">当前时间</button>
+    <button id="copy">复制摘要</button>
+  </div>
+  <pre id="out">—</pre>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function toLocalInput(d) {
+      return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    }
+    function render(d) {
+      $('out').textContent = [
+        'ISO: ' + d.toISOString(),
+        'Local: ' + d.toLocaleString(),
+        'Unix(s): ' + Math.floor(d.getTime()/1000),
+        'Unix(ms): ' + d.getTime(),
+      ].join('\n');
+    }
+    $('ts').oninput = () => {
+      let v = Number($('ts').value.trim());
+      if (!v) return;
+      if (v < 1e12) v *= 1000;
+      const d = new Date(v);
+      if (isNaN(d)) return;
+      $('dt').value = toLocalInput(d);
+      render(d);
+    };
+    $('dt').oninput = () => {
+      const d = new Date($('dt').value);
+      if (isNaN(d)) return;
+      $('ts').value = Math.floor(d.getTime()/1000);
+      render(d);
+    };
+    $('now').onclick = () => {
+      const d = new Date();
+      $('ts').value = Math.floor(d.getTime()/1000);
+      $('dt').value = toLocalInput(d);
+      render(d);
+    };
+    $('copy').onclick = async () => {
+      const t = $('out').textContent;
+      if (window.uniTools?.clipboard) await uniTools.clipboard.writeText(t);
+      else await navigator.clipboard.writeText(t);
+    };
+    $('now').click();
+  </script>
+</body>
+</html>

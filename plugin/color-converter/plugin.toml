@@ -1,0 +1,12 @@
+[plugin]
+id = "color-converter"
+name = "颜色转换"
+version = "1.0.0"
+type = "ui"
+entry = "ui/index.html"
+
+[plugin.features]
+keywords = ["color", "hex", "rgb", "颜色"]
+
+[plugin.permissions]
+clipboard = true
