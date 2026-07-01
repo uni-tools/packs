@@ -9,11 +9,28 @@
   },
   "items": [
     {
+      "id": "agent-core",
+      "kind": "agent-core",
+      "name": "OpenFang Agent Core",
+      "version": "0.6.9",
+      "description": "可选内核：UTCP 工具总线、Pack 市场 API。纯工具用户可不安装；需要 AI/市场/UTCP 时从市场一键启用。",
+      "category": "AI",
+      "author": "uni-tools",
+      "tags": ["openfang", "agent-core", "ai", "utcp"],
+      "icon_emoji": "🧠",
+      "install": {
+        "method": "system",
+        "repo_path": "agent-core",
+        "download_url": ""
+      }
+    },
+    {
       "id": "openfang",
       "kind": "dashboard",
       "name": "OpenFang Dashboard",
       "version": "0.6.9",
       "description": "Full web dashboard: agents, workflows, app market, channels, and UTCP tools.",
+      "category": "AI",
       "tags": [
         "openfang",
         "dashboard",

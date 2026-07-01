@@ -24,7 +24,7 @@
           "id": { "type": "string" },
           "kind": {
             "type": "string",
-            "enum": ["skill", "hand", "extension", "utcp-provider", "dashboard", "channel", "ui-plugin"]
+            "enum": ["skill", "hand", "extension", "utcp-provider", "dashboard", "channel", "ui-plugin", "agent-core"]
           },
           "name": { "type": "string" },
           "version": { "type": "string" },
@@ -39,14 +39,15 @@
           "min_shell_version": { "type": "string" },
           "install": {
             "type": "object",
-            "required": ["method", "repo_path"],
+            "required": ["method"],
             "properties": {
               "method": {
                 "type": "string",
-                "enum": ["github_release", "git_sparse", "local_path"]
+                "enum": ["github_release", "git_sparse", "local_path", "system"]
               },
               "repo_path": { "type": "string" },
               "release_asset": { "type": "string" },
+              "download_url": { "type": "string" },
               "sha256": { "type": "string" }
             }
           }
